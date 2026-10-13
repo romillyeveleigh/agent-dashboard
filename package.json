@@ -1,0 +1,10 @@
+{
+  "name": "agent-dashboard",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --dir dashboard dev",
+    "start": "pnpm --dir dashboard prod"
+  }
+}

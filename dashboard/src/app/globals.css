@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f2f0ec;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafaf8;
+  --border: #ddddd8;
+  --border-subtle: #e8e8e4;
+  --text: #18181b;
+  --text-muted: #78786e;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-dim: rgba(37, 99, 235, 0.06);
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+  --waiting: #7c3aed;
+  --bg-input: #ffffff;
+  --bg-badge: #ededea;
+  --text-badge: #5c5c54;
+  --bg-user-msg: #eff4fc;
+  --bg-dispatch: #f3f3f0;
+  --bg-code: #ededea;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+html.dark {
+  --bg: #0e0e10;
+  --bg-card: #18181b;
+  --bg-card-hover: #222226;
+  --border: #2a2a2e;
+  --border-subtle: #222226;
+  --text: #ededea;
+  --text-muted: #8a8a80;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --accent-dim: rgba(96, 165, 250, 0.1);
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --waiting: #a78bfa;
+  --bg-input: #18181b;
+  --bg-badge: #27272a;
+  --text-badge: #a1a1aa;
+  --bg-user-msg: #1e293b;
+  --bg-dispatch: #1a1a1d;
+  --bg-code: #27272a;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: 'ss01', 'ss02';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, .font-mono, [class*="font-mono"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'liga', 'calt';
+}
+
+/* Status badges */
+.status-running { color: var(--accent); }
+.status-waiting_for_feedback { color: var(--waiting); }
+.status-complete { color: var(--success); }
+.status-failed { color: var(--error); }
+.status-starting { color: var(--text-muted); }
+.status-pending { color: var(--text-muted); }
+.status-cancelled { color: var(--text-muted); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Tab underline glow */
+.tab-active {
+  box-shadow: 0 1px 6px rgba(37, 99, 235, 0.15);
+}
+
+/* Sonar pulse for active task indicators */
+.sonar-dot {
+  animation: sonar 1.5s ease-out infinite;
+}
+@keyframes sonar {
+  0% { box-shadow: 0 0 0 0 currentColor; }
+  100% { box-shadow: 0 0 0 6px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sonar-dot { animation: none; }
+  .phase-spin { animation: none; }
+  .phase-bar-shimmer { animation: none; }
+  .phase-dot-active { animation: none; }
+}
+
+/* Phase stepper animations */
+@keyframes phase-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.phase-spin {
+  animation: phase-spin 0.8s linear infinite;
+}
+
+@keyframes phase-shimmer {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+.phase-bar-shimmer {
+  animation: phase-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes phase-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent); }
+  50% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+}
+.phase-dot-active {
+  animation: phase-dot-pulse 1.8s ease-in-out infinite;
+}
+
+/* Card base styles */
+.card-elevated {
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-elevated:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Focus ring for interactive elements */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+

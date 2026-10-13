@@ -1,0 +1,21 @@
+# Build-script approvals (pnpm >=10 skips postinstall/native builds by default).
+# better-sqlite3 is load-bearing: without its native build every DB route 500s.
+allowBuilds:
+  better-sqlite3: true
+  cpu-features: true
+  esbuild: true
+  protobufjs: true
+  sharp: true
+  ssh2: true
+# pnpm settings. pnpm >=10 reads overrides from here — the old `pnpm.overrides`
+# block in package.json is silently ignored (pnpm warns on every install).
+# These force transitive deps past known Dependabot advisories.
+overrides:
+  protobufjs: ">=7.6.3 <8"
+  shell-quote: ">=1.8.4"
+  uuid: ">=11.1.1"
+  ws: ">=8.20.1"
+  postcss: ">=8.5.10"
+  form-data: ">=4.0.6"
+  "@grpc/grpc-js": ">=1.14.4"
+  vite: ">=8.0.16"

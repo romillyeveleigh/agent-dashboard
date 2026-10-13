@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+.playwright-mcp/
+.next/
+dist/
+data/
+.env
+.env.local
+.env*.local
+*.db
+*.db-journal
+*.db-wal
+*.tsbuildinfo
