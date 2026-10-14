@@ -1,7 +1,7 @@
 ---
 name: do-some-work-headless
 description: |
-  Headless version of do-some-work for containerised execution via the agent dashboard.
+  Runs dashboard tasks inside agent containers.
   Seven modes: code (implement a ticket), review (review a PR or address PR feedback), plan (write an implementation plan), housekeeping (fix stale statuses), brainstorm (explore and plan new ideas), general (catch-all), ship (ticket-to-PR pipeline).
   All interactive prompts use the channel MCP server (reply tool for questions, say tool for non-blocking notes) instead of AskUserQuestion.
   Runs inside Docker containers with full isolation — no worktrees needed.
@@ -510,7 +510,7 @@ Exit. Don't wait for CI.
 
 Every ticket needs a Linear document linked to the issue — the single editable source of truth for plan, progress, blockers, and review notes. Create with `create_document`, update in place with `update_document`.
 
-For the template and update rules, read `/workspace/.claude/skills/_shared/work-document-template.md` (the same template both skills use).
+For the template and update rules, read `/workspace/.claude/skills/_shared/work-document-template.md`.
 
 ---
 
