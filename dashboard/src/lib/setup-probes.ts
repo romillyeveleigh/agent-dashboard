@@ -61,7 +61,7 @@ async function probeGithubToken(value: string): Promise<ProbeResult> {
         headers: {
           Authorization: `Bearer ${value}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'agent-dashboard-setup',
+          'User-Agent': 'do-some-work-setup',
         },
       }),
       PROBE_TIMEOUT_MS,
@@ -98,7 +98,7 @@ async function probeGithubUsername(value: string, ctx?: ProbeContext): Promise<P
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'agent-dashboard-setup',
+          'User-Agent': 'do-some-work-setup',
         },
       }),
       PROBE_TIMEOUT_MS,
@@ -156,7 +156,7 @@ async function probeRepoUrl(value: string, ctx?: ProbeContext): Promise<ProbeRes
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'agent-dashboard-setup',
+          'User-Agent': 'do-some-work-setup',
         },
       }),
       PROBE_TIMEOUT_MS,

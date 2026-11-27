@@ -874,8 +874,8 @@ function ShellInner({ children }: { children: React.ReactNode }) {
     <>
       <div className="flex h-screen">
         <aside className="w-14 shrink-0 bg-[var(--bg-card)]/80 backdrop-blur-md border-r border-[var(--border)] flex flex-col items-center" style={{ boxShadow: 'var(--shadow-nav)' }}>
-          <Link href="/" title="Agent Dashboard" className="flex items-center justify-center w-8 h-8 mt-3 mb-2 rounded-lg bg-[var(--accent)] text-white text-[14px] font-bold tracking-tight shadow-sm hover:shadow-md transition-shadow">
-            A
+          <Link href="/" title="Do Some Work" className="flex items-center justify-center w-8 h-8 mt-3 mb-2 rounded-lg bg-[var(--accent)] text-white text-[14px] font-bold tracking-tight shadow-sm hover:shadow-md transition-shadow">
+            D
           </Link>
           <nav className="flex flex-col gap-1 py-2 flex-1">
             <SidebarLink href="/tasks" label="Tasks" badge={runningCount}>

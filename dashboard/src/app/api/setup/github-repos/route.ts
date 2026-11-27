@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: 'application/vnd.github+json',
-          'User-Agent': 'agent-dashboard-setup',
+          'User-Agent': 'do-some-work-setup',
         },
         timeoutMs: 8000,
       },

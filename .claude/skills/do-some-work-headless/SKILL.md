@@ -17,7 +17,7 @@ answers (questions, approvals, blockers), `say` posts to the thread and returns 
 (acknowledgements, FYI reports, progress notes). Never use `reply` for a message you don't
 need answered.
 
-**This skill is invoked by the agent dashboard entrypoint with a mode named in the prompt.**
+**This skill is invoked by the Do Some Work dashboard entrypoint with a mode named in the prompt.**
 
 ## Environment
 

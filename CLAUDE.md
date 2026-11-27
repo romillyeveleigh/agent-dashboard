@@ -1,4 +1,4 @@
-# Agent Dashboard
+# Do Some Work
 
 An orchestration dashboard for running autonomous Claude Code agents in Docker containers. Dispatches tasks, streams logs, handles human-in-the-loop feedback, and provides AI-powered briefings.
 

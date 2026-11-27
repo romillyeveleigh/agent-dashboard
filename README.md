@@ -1,6 +1,6 @@
-# Agent Dashboard
+# Do Some Work
 
-![Agent Dashboard home: an AI briefing of your tickets and PRs, each with a one-click action for an agent](docs/screenshot.png)
+![Do Some Work home: an AI briefing of your tickets and PRs, each with a one-click action for an agent](docs/screenshot.png)
 
 A web dashboard for dispatching and managing parallel headless Claude Code sessions. Each task runs in an isolated Docker container with full repo access, communicating back to the dashboard via an in-process supervisor (Agent SDK) with MCP-style tools for human-in-the-loop feedback.
 

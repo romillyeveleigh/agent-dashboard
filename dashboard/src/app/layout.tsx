@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Agent Dashboard',
+  title: 'Do Some Work',
   description: 'Dispatch and monitor parallel Claude Code agents',
 }
 

@@ -7,7 +7,7 @@ import type { FieldDef } from './types'
 
 export const REQUIRED_FIELDS: FieldDef[] = [
   { name: 'REPO_URL', label: 'Repo URL', placeholder: 'org/repo', affordance: 'repo', brand: 'github', helpText: 'The GitHub repo the dashboard tracks for PRs, reviews and tickets, in org/repo form.' },
-  { name: 'GITHUB_TOKEN', label: 'GitHub token', affordance: 'detect', brand: 'github', helpText: 'Lets the dashboard read your PRs/reviews and push agent branches. PAT with repo scope.', helpUrl: 'https://github.com/settings/tokens/new?scopes=repo&description=agent-dashboard' },
+  { name: 'GITHUB_TOKEN', label: 'GitHub token', affordance: 'detect', brand: 'github', helpText: 'Lets the dashboard read your PRs/reviews and push agent branches. PAT with repo scope.', helpUrl: 'https://github.com/settings/tokens/new?scopes=repo&description=do-some-work' },
   { name: 'GITHUB_USERNAME', label: 'GitHub username', brand: 'github', helpText: 'Identifies you when filtering your PRs and review requests. Auto-fills from your token.' },
   { name: 'CLAUDE_CODE_OAUTH_TOKEN', label: 'Claude Code OAuth token', brand: 'claude', helpText: 'Lets agent containers run Claude Code headless. Run `claude setup-token` to generate.', helpUrl: 'https://docs.claude.com/en/docs/claude-code/cli-reference' },
   { name: 'ANTHROPIC_API_KEY', label: 'Anthropic API key', brand: 'anthropic', helpText: 'Powers the dashboard briefing and chat features.', helpUrl: 'https://console.anthropic.com/settings/keys' },
